@@ -49,12 +49,12 @@ const badgeColors = [
 ];
 
 const Skills = () => (
-  <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-md px-6 py-8">
-    <h2 className="text-2xl font-bold text-slate-900 mb-6">Skills</h2>
+  <div className="max-w-4xl w-full bg-white rounded-2xl shadow-2xl px-6 py-8 border border-[#32324d]">
+    <h2 className="text-2xl font-bold text-[#22223b] mb-6">Skills</h2>
     <div className="grid md:grid-cols-2 gap-6">
       {groups.map((group, i) => (
         <div key={group.label}>
-          <h3 className="font-semibold text-slate-800 mb-3">{group.label}</h3>
+          <h3 className="font-semibold text-[#4ea8de] mb-3">{group.label}</h3>
           <div className="flex flex-wrap gap-2">
             {group.skills.map(skill => (
               <span
