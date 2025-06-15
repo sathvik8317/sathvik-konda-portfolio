@@ -35,13 +35,13 @@ const projects = [
 ];
 
 const Projects = () => (
-  <div className="max-w-5xl mx-auto bg-[#fafdff] rounded-3xl shadow-md border border-blue-100/60 p-8">
-    <h2 className="text-2xl font-extrabold text-[#003049] mb-6">Projects</h2>
+  <div className="max-w-5xl mx-auto">
+    <h2 className="text-2xl font-bold text-slate-900 mb-6">Projects</h2>
     <div className="grid md:grid-cols-2 gap-6">
       {projects.map((proj, idx) => (
         <div
           key={proj.title}
-          className="rounded-2xl bg-blue-50 shadow-sm p-6 border border-blue-100 hover:shadow-blue-100 transition-shadow flex flex-col animate-fade-in"
+          className="rounded-2xl bg-white shadow-sm p-6 border border-slate-100 hover:shadow-blue-100 transition-shadow flex flex-col animate-fade-in"
           style={{ animationDelay: `${idx * 50}ms` }}
         >
           <h3 className="font-semibold text-lg text-blue-700 mb-2">{proj.title}</h3>
@@ -50,7 +50,7 @@ const Projects = () => (
             {proj.tech.map(t => (
               <span
                 key={t}
-                className="bg-blue-100 text-blue-800 rounded px-2 py-0.5 text-xs font-medium border border-blue-200"
+                className="bg-blue-50 text-blue-700 rounded px-2 py-0.5 text-xs font-medium border border-blue-100"
               >
                 {t}
               </span>

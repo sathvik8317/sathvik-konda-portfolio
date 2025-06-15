@@ -1,3 +1,4 @@
+
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -5,27 +6,31 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+
 const Index = () => {
-  return <div className="bg-[#003049] min-h-screen font-inter flex flex-col">
+  return (
+    <div className="bg-[#f8fafc] min-h-screen font-inter flex flex-col">
       <Navbar />
-      <main className="flex-1 flex flex-col pt-20 sm:pt-28 gap-14 sm:gap-20 bg-[4361ee] bg-[#22223b]">
+      <main className="flex-1 flex flex-col pt-20 sm:pt-28">
         <section id="home">
           <Hero />
         </section>
-        <section id="about">
+        <section id="about" className="mt-12 sm:mt-20">
           <About />
         </section>
-        <section id="skills">
+        <section id="skills" className="mt-12 sm:mt-20">
           <Skills />
         </section>
-        <section id="projects">
+        <section id="projects" className="mt-12 sm:mt-20">
           <Projects />
         </section>
-        <section id="contact">
+        <section id="contact" className="mt-12 sm:mt-20">
           <Contact />
         </section>
       </main>
       <Footer />
-    </div>;
+    </div>
+  );
 };
+
 export default Index;
