@@ -1,5 +1,8 @@
+
 import { Download } from "lucide-react";
-const Hero = () => <section className="w-full py-12 sm:py-20 px-2 bg-[#222222]">
+
+const Hero = () => (
+  <section className="w-full bg-[#22223b] py-12 sm:py-20 px-2">
     <div className="max-w-5xl mx-auto flex flex-col-reverse sm:flex-row items-center gap-10">
       <div className="flex-1 flex flex-col items-center sm:items-start text-center sm:text-left">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-5 text-white tracking-tight drop-shadow">
@@ -9,10 +12,17 @@ const Hero = () => <section className="w-full py-12 sm:py-20 px-2 bg-[#222222]">
           A Data Science enthusiast passionate about ML, Gen AI, and solving problems with code.
         </p>
         <div className="flex gap-4">
-          <a href="#projects" className="bg-[#4ea8de] hover:bg-[#009ddc] text-white px-7 py-2.5 rounded-lg font-semibold shadow-lg transition duration-200 text-base focus:outline-none focus:ring-2 focus:ring-[#4ea8de] focus:ring-offset-2">
+          <a
+            href="#projects"
+            className="bg-[#4ea8de] hover:bg-[#009ddc] text-white px-7 py-2.5 rounded-lg font-semibold shadow-lg transition duration-200 text-base focus:outline-none focus:ring-2 focus:ring-[#4ea8de] focus:ring-offset-2"
+          >
             View Projects
           </a>
-          <a href="/resume.pdf" download className="flex items-center gap-2 border-2 border-[#4ea8de] text-[#4ea8de] px-6 py-2.5 rounded-lg font-semibold transition duration-200 hover:bg-[#22223b]/70 hover:text-white hover:border-white focus:outline-none focus:ring-2 focus:ring-[#4ea8de] focus:ring-offset-2">
+          <a
+            href="/resume.pdf"
+            download
+            className="flex items-center gap-2 border-2 border-[#4ea8de] text-[#4ea8de] px-6 py-2.5 rounded-lg font-semibold transition duration-200 hover:bg-[#22223b]/70 hover:text-white hover:border-white focus:outline-none focus:ring-2 focus:ring-[#4ea8de] focus:ring-offset-2"
+          >
             <Download className="w-5 h-5" />
             Download Resume
           </a>
@@ -28,5 +38,7 @@ const Hero = () => <section className="w-full py-12 sm:py-20 px-2 bg-[#222222]">
         </div>
       </div>
     </div>
-  </section>;
+  </section>
+);
+
 export default Hero;
