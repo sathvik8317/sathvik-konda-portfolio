@@ -42,19 +42,20 @@ const groups = [
 ];
 
 const badgeColors = [
-  "bg-blue-50 text-blue-700 border-blue-200",
-  "bg-teal-50 text-teal-700 border-teal-200",
-  "bg-orange-50 text-orange-700 border-orange-200",
-  "bg-purple-50 text-purple-700 border-purple-200",
+  "bg-[#22223b] text-[#00BFFF] border-[#00BFFF]/40",
+  "bg-[#272930] text-[#00BFFF] border-[#00BFFF]/30",
+  "bg-[#17191A] text-[#00BFFF] border-[#00BFFF]/20",
+  "bg-[#22223b] text-[#00BFFF] border-[#00BFFF]/30",
 ];
+// changed color for badge backgrounds and borders, all text accent
 
 const Skills = () => (
-  <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-md px-6 py-8">
-    <h2 className="text-2xl font-bold text-slate-900 mb-6">Skills</h2>
+  <div className="max-w-4xl mx-auto bg-[#272930] rounded-2xl shadow-md px-6 py-8">
+    <h2 className="text-2xl font-bold mb-6 text-[#B8B8CA]">Skills</h2>
     <div className="grid md:grid-cols-2 gap-6">
       {groups.map((group, i) => (
         <div key={group.label}>
-          <h3 className="font-semibold text-slate-800 mb-3">{group.label}</h3>
+          <h3 className="font-semibold mb-3 text-[#00BFFF]">{group.label}</h3>
           <div className="flex flex-wrap gap-2">
             {group.skills.map(skill => (
               <span

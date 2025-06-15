@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -9,7 +8,7 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="bg-[#f8fafc] min-h-screen font-inter flex flex-col">
+    <div className="bg-[#17191A] min-h-screen font-inter flex flex-col">
       <Navbar />
       <main className="flex-1 flex flex-col pt-20 sm:pt-28">
         <section id="home">

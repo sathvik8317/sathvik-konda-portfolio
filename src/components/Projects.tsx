@@ -36,21 +36,21 @@ const projects = [
 
 const Projects = () => (
   <div className="max-w-5xl mx-auto">
-    <h2 className="text-2xl font-bold text-slate-900 mb-6">Projects</h2>
+    <h2 className="text-2xl font-bold mb-6 text-[#B8B8CA]">Projects</h2>
     <div className="grid md:grid-cols-2 gap-6">
       {projects.map((proj, idx) => (
         <div
           key={proj.title}
-          className="rounded-2xl bg-white shadow-sm p-6 border border-slate-100 hover:shadow-blue-100 transition-shadow flex flex-col animate-fade-in"
+          className="rounded-2xl bg-[#272930] shadow-sm p-6 border border-[#22223b] hover:shadow-[#00BFFF]/10 transition-shadow flex flex-col animate-fade-in"
           style={{ animationDelay: `${idx * 50}ms` }}
         >
-          <h3 className="font-semibold text-lg text-blue-700 mb-2">{proj.title}</h3>
-          <p className="text-sm text-slate-700 mb-3">{proj.description}</p>
+          <h3 className="font-semibold text-lg mb-2 text-[#00BFFF]">{proj.title}</h3>
+          <p className="text-sm mb-3 text-[#B8B8CA]">{proj.description}</p>
           <div className="flex flex-wrap gap-2 mb-4">
             {proj.tech.map(t => (
               <span
                 key={t}
-                className="bg-blue-50 text-blue-700 rounded px-2 py-0.5 text-xs font-medium border border-blue-100"
+                className="bg-[#22223b] text-[#00BFFF] rounded px-2 py-0.5 text-xs font-medium border border-[#00BFFF]/30"
               >
                 {t}
               </span>
@@ -62,7 +62,7 @@ const Projects = () => (
                 href={proj.code}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline text-sm text-blue-600 hover:text-blue-800 transition"
+                className="underline text-sm text-[#00BFFF] hover:text-[#B8B8CA] transition"
               >
                 View Code
               </a>
@@ -72,7 +72,7 @@ const Projects = () => (
                 href={proj.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline text-sm text-blue-600 hover:text-blue-800 transition"
+                className="underline text-sm text-[#00BFFF] hover:text-[#B8B8CA] transition"
               >
                 Live Demo
               </a>
