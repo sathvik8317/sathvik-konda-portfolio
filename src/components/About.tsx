@@ -6,7 +6,7 @@ const About = () => (
         <p>
           I am Sathvik, currently in my final year at VNR VJIET pursuing Computer Science with a specialization in Data Science. I'm deeply interested in exploring new technologies, working with tools, and applying machine learning and data analysis to real-world problems. What drives me is the passion to constantly improve and push boundaries in the data world.
         </p>
-        {/* Increase vertical space here */}
+        <div className="my-14" /> {/* Increased vertical space */}
         <div className="mt-10">
           <h3 className="font-semibold mb-1 text-[#00BFFF]">Research Work</h3>
           <p className="text-sm text-[#B8B8CA]/80">

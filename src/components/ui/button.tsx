@@ -42,19 +42,23 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button"
+    const Comp = asChild ? Slot : "button";
     return (
       <Comp
         className={cn(
           buttonVariants({ variant, size, className }),
-          "transition duration-150 hover:-translate-y-1 hover:shadow-lg focus-visible:shadow-lg"
+          "transition duration-150 hover:-translate-y-1 hover:shadow-lg focus-visible:shadow-lg relative overflow-hidden"
         )}
         ref={ref}
         {...props}
-      />
-    )
+      >
+        {props.children}
+        {/* Ripple effect */}
+        <span className="absolute pointer-events-none inset-0 rounded-md opacity-0 transition-opacity duration-300" />
+      </Comp>
+    );
   }
-)
-Button.displayName = "Button"
+);
+Button.displayName = "Button";
 
-export { Button, buttonVariants }
+export { Button, buttonVariants };

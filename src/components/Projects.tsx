@@ -1,7 +1,6 @@
-
 import React, { useState } from "react";
 
-const TRUNCATE_LENGTH = 120; // Number of characters for description preview
+const TRUNCATE_LENGTH = 124; // Number of characters for description preview
 
 const projects = [
   {
@@ -57,10 +56,10 @@ const ProjectCard = ({
 
   return (
     <div
-      className="rounded-2xl bg-[#272930] shadow-sm p-6 border border-[#22223b] flex flex-col min-h-[300px] max-h-[340px] h-full transition-all duration-200 hover:-translate-y-1 hover:shadow-lg focus-within:shadow-lg animate-fade-in"
-      style={{ animationDelay: `${idx * 50}ms` }}
+      className="rounded-2xl bg-[#272930] shadow-sm p-6 border border-[#22223b] flex flex-col min-h-[340px] max-h-[340px] h-[340px] transition-all duration-200 hover:-translate-y-1 hover:shadow-lg focus-within:shadow-lg animate-fade-in"
       tabIndex={0}
       aria-label={`${title} project card`}
+      style={{ animationDelay: `${idx * 50}ms` }}
     >
       <h3 className="font-semibold text-lg mb-2 text-[#00BFFF]">{title}</h3>
       <p className="text-sm mb-3 text-[#B8B8CA]">
@@ -79,7 +78,7 @@ const ProjectCard = ({
         {tech.map(t => (
           <span
             key={t}
-            className="bg-[#22223b] text-[#00BFFF] rounded px-2 py-0.5 text-xs font-medium border border-[#00BFFF]/30"
+            className="bg-[#22223b] text-[#00BFFF] rounded px-2 py-0.5 text-xs font-medium border border-[#00BFFF]/30 transform transition-transform duration-150 hover:scale-110 focus:scale-110"
             tabIndex={0}
             aria-label={t + " tech used"}
           >
