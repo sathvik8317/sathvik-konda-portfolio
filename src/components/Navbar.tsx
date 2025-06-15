@@ -1,6 +1,6 @@
+
 import { useState } from "react";
 import { Menu } from "lucide-react";
-import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { to: "home", label: "Home" },
@@ -30,24 +30,20 @@ const Navbar = () => {
       }}
     >
       <div className="max-w-5xl mx-auto px-4 flex items-center justify-between h-16 sm:h-20">
-        <div className="flex items-center gap-3">
-          <span className="font-bold text-lg tracking-tight" style={{ color: "#E5E5F0" }}>
-            Sathvik Konda
-          </span>
-          <ThemeToggle />
+        <div className="font-bold text-lg tracking-tight" style={{ color: "#E5E5F0" }}>
+          Sathvik Konda
         </div>
         <ul className="hidden md:flex gap-6">
           {navLinks.map(link => (
             <li key={link.to}>
               <button
-                className="relative px-2 py-1 font-medium transition-colors after:block after:w-0 after:h-0.5 after:bg-[#00BFFF] after:transition-all after:duration-200 hover:after:w-full after:mt-1 focus:outline-none focus:ring-2 focus:ring-[#00BFFF] focus:ring-offset-2"
+                className="relative px-2 py-1 font-medium transition-colors after:block after:w-0 after:h-0.5 after:bg-[#00BFFF] after:transition-all after:duration-200 hover:after:w-full after:mt-1"
                 style={{
                   color: "#E5E5F0"
                 }}
                 onMouseEnter={e => (e.currentTarget.style.color = "#00BFFF")}
                 onMouseLeave={e => (e.currentTarget.style.color = "#E5E5F0")}
                 onClick={() => scrollToSection(link.to)}
-                tabIndex={0}
               >
                 {link.label}
               </button>
@@ -74,13 +70,12 @@ const Navbar = () => {
                   setMenuOpen(false);
                   scrollToSection(link.to);
                 }}
-                className="py-2 px-4 text-left w-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#00BFFF] focus:ring-offset-2"
+                className="py-2 px-4 text-left w-full transition-colors"
                 style={{
                   color: "#E5E5F0"
                 }}
                 onMouseEnter={e => (e.currentTarget.style.color = "#00BFFF")}
                 onMouseLeave={e => (e.currentTarget.style.color = "#E5E5F0")}
-                tabIndex={0}
               >
                 {link.label}
               </button>
@@ -92,3 +87,4 @@ const Navbar = () => {
   );
 };
 export default Navbar;
+

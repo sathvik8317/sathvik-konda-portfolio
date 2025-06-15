@@ -3,9 +3,11 @@ import React, { useRef, useState } from "react";
 import { Camera } from "lucide-react";
 
 const Hero = () => {
+  // Store the selected image as a DataURL
   const [profileImage, setProfileImage] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
+  // Handle file selection and update profile image
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -17,47 +19,41 @@ const Hero = () => {
     }
   };
 
+  // Trigger the file input when the edit button is clicked
   const handleEditClick = () => {
     fileInputRef.current?.click();
   };
 
   return (
-    <div className="max-w-5xl mx-auto w-full flex flex-col-reverse sm:flex-row items-center gap-10 px-2 pt-8 relative">
-      {/* Geometric gradient overlay */}
-      <div
-        aria-hidden="true"
-        className="absolute top-0 left-0 w-full h-56 z-0 pointer-events-none"
-        style={{
-          background: "linear-gradient(120deg, rgba(0,191,255,0.07) 30%, rgba(100,138,255,0.03) 100%)",
-        }}
-      >
-        {/* SVG pattern for a subtle geometric effect */}
-        <svg width="100%" height="100%">
-          <defs>
-            <pattern id="geo" width="32" height="32" patternUnits="userSpaceOnUse">
-              <rect width="32" height="32" fill="none" />
-              <circle cx="16" cy="16" r="1.5" fill="#00BFFF" opacity="0.08" />
-              <circle cx="0" cy="0" r="1.5" fill="#00BFFF" opacity="0.06" />
-              <circle cx="32" cy="32" r="1.5" fill="#00BFFF" opacity="0.07" />
-              <circle cx="0" cy="32" r="1.5" fill="#00BFFF" opacity="0.07" />
-              <circle cx="32" cy="0" r="1.5" fill="#00BFFF" opacity="0.06" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#geo)" />
-        </svg>
-      </div>
-      <div className="flex-1 flex flex-col items-center sm:items-start text-center sm:text-left relative z-10">
-        <div className="w-full">
-          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 leading-tight text-[#B8B8CA]">
-            Hi, I’m <span className="text-[#00BFFF]">Sathvik</span>
+    <div className="max-w-5xl mx-auto w-full flex flex-col-reverse sm:flex-row items-center gap-10 px-2">
+      <div className="flex-1 flex flex-col items-center sm:items-start text-center sm:text-left relative">
+        {/* Pattern or overlay behind headline */}
+        <div
+          aria-hidden="true"
+          className="absolute left-1/2 -translate-x-1/2 top-0 w-[120%] h-40 pointer-events-none select-none"
+          style={{
+            zIndex: 0,
+            background:
+              "repeating-linear-gradient(135deg,rgba(0,191,255,0.07) 0 10px,transparent 10px 20px)",
+            opacity: 0.7,
+            borderRadius: "1.5rem",
+            filter: "blur(1.5px)"
+          }}
+        >
+          {/* Semi-transparent pattern */}
+        </div>
+        <div className="relative z-10 w-full">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            <span className="text-[#B8B8CA]">Hi, I’m </span>
+            <span className="text-[#00BFFF]">Sathvik</span>
           </h1>
-          <p className="text-lg sm:text-xl text-[#B8B8CA] mb-6 max-w-lg font-normal leading-relaxed">
+          <p className="text-lg sm:text-xl text-[#B8B8CA] mb-6 max-w-lg">
             A Data Science enthusiast passionate about ML, Gen AI, and solving problems with code.
           </p>
           <div className="flex gap-4">
             <a
               href="#projects"
-              className="bg-[#00BFFF] text-[#17191A] px-6 py-2 rounded-lg font-semibold shadow transition duration-150 hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00BFFF] focus-visible:ring-offset-2"
+              className="bg-[#00BFFF] text-[#17191A] px-6 py-2 rounded-lg font-semibold shadow hover:bg-[#B8B8CA] hover:text-[#17191A] transition-colors hover:-translate-y-1 hover:shadow-lg focus-visible:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00BFFF]"
               tabIndex={0}
             >
               View Projects
@@ -65,7 +61,7 @@ const Hero = () => {
             <a
               href="/resume.png"
               download="Sathvik_Konda_Resume.png"
-              className="border border-[#00BFFF] text-[#00BFFF] px-6 py-2 rounded-lg font-semibold transition duration-150 hover:bg-[#17191A] hover:text-[#00BFFF] hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00BFFF] focus-visible:ring-offset-2"
+              className="border border-[#00BFFF] text-[#00BFFF] px-6 py-2 rounded-lg font-semibold hover:bg-[#17191A] hover:text-[#00BFFF] transition hover:-translate-y-1 hover:shadow-lg focus-visible:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00BFFF]"
               tabIndex={0}
             >
               Download Resume
@@ -73,7 +69,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="flex-1 flex justify-center sm:justify-end z-10">
+      <div className="flex-1 flex justify-center sm:justify-end">
         <div className="relative group">
           <div className="absolute w-44 h-44 bg-gradient-to-tr from-blue-100 to-blue-300 rounded-full left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 blur-2xl opacity-60"></div>
           <div className="relative z-10 overflow-hidden rounded-full w-40 h-40 shadow-lg border-4 border-white bg-slate-200 flex items-center justify-center">
@@ -94,7 +90,7 @@ const Hero = () => {
             {/* Edit Icon Overlay */}
             <button
               onClick={handleEditClick}
-              className="absolute bottom-3 right-3 bg-[#17191A]/80 hover:bg-[#17191A] text-[#00BFFF] p-2 rounded-full shadow border border-[#272930] group-hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#00BFFF] focus:ring-offset-2 transition"
+              className="absolute bottom-3 right-3 bg-[#17191A]/80 hover:bg-[#17191A] text-[#00BFFF] p-2 rounded-full shadow flex items-center justify-center transition-colors border border-[#272930] group-hover:scale-105 focus:outline-none"
               aria-label="Edit profile picture"
               type="button"
             >

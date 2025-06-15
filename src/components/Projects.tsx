@@ -1,6 +1,7 @@
+
 import React, { useState } from "react";
 
-const TRUNCATE_LENGTH = 140;
+const TRUNCATE_LENGTH = 120; // Number of characters for description preview
 
 const projects = [
   {
@@ -56,17 +57,17 @@ const ProjectCard = ({
 
   return (
     <div
-      className="rounded-2xl bg-[#272930] shadow-sm p-6 border border-[#22223b] flex flex-col h-[340px] transition-transform duration-200 hover:-translate-y-2 hover:shadow-2xl focus-within:shadow-2xl focus-within:ring-2 focus-within:ring-[#00BFFF] focus-within:ring-offset-2 outline-none animate-fade-in"
+      className="rounded-2xl bg-[#272930] shadow-sm p-6 border border-[#22223b] flex flex-col min-h-[300px] max-h-[340px] h-full transition-all duration-200 hover:-translate-y-1 hover:shadow-lg focus-within:shadow-lg animate-fade-in"
       style={{ animationDelay: `${idx * 50}ms` }}
       tabIndex={0}
       aria-label={`${title} project card`}
     >
-      <h3 className="font-semibold text-lg sm:text-xl mb-2 text-[#00BFFF] leading-snug">{title}</h3>
-      <p className="text-sm mb-3 text-[#B8B8CA] min-h-[54px]">
+      <h3 className="font-semibold text-lg mb-2 text-[#00BFFF]">{title}</h3>
+      <p className="text-sm mb-3 text-[#B8B8CA]">
         {displayDescription}
         {description.length > TRUNCATE_LENGTH && (
           <button
-            className="ml-2 underline text-[#00BFFF] hover:text-[#B8B8CA] text-xs focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00BFFF]"
+            className="ml-2 underline text-[#00BFFF] hover:text-[#B8B8CA] text-xs focus:outline-none"
             onClick={onToggle}
             aria-label={isTruncated ? "Expand project description" : "Collapse project description"}
           >
@@ -78,7 +79,7 @@ const ProjectCard = ({
         {tech.map(t => (
           <span
             key={t}
-            className="bg-[#22223b] text-[#00BFFF] rounded px-2 py-0.5 text-xs font-medium border border-[#00BFFF]/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00BFFF]"
+            className="bg-[#22223b] text-[#00BFFF] rounded px-2 py-0.5 text-xs font-medium border border-[#00BFFF]/30"
             tabIndex={0}
             aria-label={t + " tech used"}
           >
@@ -92,7 +93,7 @@ const ProjectCard = ({
             href={code}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline text-sm text-[#00BFFF] hover:text-[#B8B8CA] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00BFFF]"
+            className="underline text-sm text-[#00BFFF] hover:text-[#B8B8CA] transition"
             tabIndex={0}
             aria-label="View code"
           >
@@ -104,7 +105,7 @@ const ProjectCard = ({
             href={demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline text-sm text-[#00BFFF] hover:text-[#B8B8CA] transition focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00BFFF]"
+            className="underline text-sm text-[#00BFFF] hover:text-[#B8B8CA] transition"
             tabIndex={0}
             aria-label="Live demo"
           >
@@ -117,11 +118,12 @@ const ProjectCard = ({
 };
 
 const Projects = () => {
+  // Track which card descriptions are expanded
   const [expanded, setExpanded] = useState<{ [index: number]: boolean }>({});
 
   return (
     <div className="max-w-5xl mx-auto">
-      <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-[#B8B8CA] leading-tight">Projects</h2>
+      <h2 className="text-2xl font-bold mb-6 text-[#B8B8CA]">Projects</h2>
       <div className="grid md:grid-cols-2 gap-6">
         {projects.map((proj, idx) => {
           const isTruncated = !expanded[idx];

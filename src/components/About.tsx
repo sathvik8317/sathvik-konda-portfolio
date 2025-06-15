@@ -1,15 +1,14 @@
-
 const About = () => (
-  <div className="max-w-4xl mx-auto bg-[#272930] rounded-2xl shadow-md px-6 py-12 flex flex-col gap-10">
-    <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-[#B8B8CA] leading-tight">About me</h2>
-    <div className="flex flex-col sm:flex-row gap-12">
+  <div className="max-w-4xl mx-auto bg-[#272930] rounded-2xl shadow-md px-6 py-8 flex flex-col gap-6">
+    <h2 className="text-2xl font-bold mb-2 text-[#B8B8CA]">About me</h2>
+    <div className="flex flex-col sm:flex-row gap-8">
       <div className="flex-1 text-[#B8B8CA] text-base leading-relaxed">
         <p>
           I am Sathvik, currently in my final year at VNR VJIET pursuing Computer Science with a specialization in Data Science. I'm deeply interested in exploring new technologies, working with tools, and applying machine learning and data analysis to real-world problems. What drives me is the passion to constantly improve and push boundaries in the data world.
         </p>
         {/* Increase vertical space here */}
         <div className="mt-10">
-          <h3 className="font-semibold mb-2 text-[#00BFFF] text-xl leading-tight">Research Work</h3>
+          <h3 className="font-semibold mb-1 text-[#00BFFF]">Research Work</h3>
           <p className="text-sm text-[#B8B8CA]/80">
             Worked on a research paper titled{' '}
             <span className="italic font-medium">
@@ -20,9 +19,9 @@ const About = () => (
         </div>
       </div>
       {/* Education */}
-      <div className="flex-1 bg-[#22223b] rounded-xl px-7 py-6 mt-10 sm:mt-0">
-        <h3 className="font-semibold mb-4 text-[#00BFFF] text-xl leading-tight">Education</h3>
-        <div className="space-y-7">
+      <div className="flex-1 bg-[#22223b] rounded-xl px-5 py-4 mt-6 sm:mt-0">
+        <h3 className="font-semibold mb-3 text-[#00BFFF]">Education</h3>
+        <div className="space-y-6">
           <div>
             <div className="font-medium text-[#B8B8CA]">B.Tech – CSE (Data Science)</div>
             <div className="text-sm text-[#B8B8CA]/70">VNR VJIET, 2022 – Present</div>
