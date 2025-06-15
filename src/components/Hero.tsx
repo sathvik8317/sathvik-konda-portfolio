@@ -2,44 +2,52 @@
 import { Button } from "@/components/ui/button";
 
 const Hero = () => (
-  <section className="relative w-full overflow-hidden pb-4 pt-6 sm:pb-12 sm:pt-12 md:pt-20 mb-4">
-    {/* Decorative blurred gradient background accent */}
-    <div className="absolute -z-10 left-1/2 top-0 -translate-x-1/2 blur-[110px] pointer-events-none w-[600px] h-[340px] opacity-60"
-      style={{
-        background: "linear-gradient(135deg, #c7eafd 0%, #e0e7ff 60%, #e6f6ff 100%)",
-      }}
-      aria-hidden="true"
-    />
-    <div className="max-w-5xl mx-auto w-full flex flex-col-reverse sm:flex-row items-center gap-8 px-2">
+  <section className="relative w-full py-12 sm:py-20 bg-[#f5f8fc]">
+    {/* Profile image/placeholder */}
+    <div className="max-w-5xl mx-auto w-full flex flex-col-reverse sm:flex-row items-center justify-between gap-8 px-2">
       {/* Text & CTA */}
-      <div className="flex-1 flex flex-col items-center sm:items-start text-center sm:text-left animate-fade-in">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 mb-3 tracking-tight leading-tight">
-          Hi, I’m <span className="text-primary">Sathvik</span>
+      <div className="flex-1 flex flex-col items-center sm:items-start text-center sm:text-left">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-slate-900 mb-4 tracking-tight leading-tight">
+          Hi, I'm <span className="text-blue-700">Sathvik</span>
         </h1>
-        <p className="text-lg sm:text-xl text-slate-700 mb-6 max-w-lg animate-fade-in" style={{ animationDelay: "80ms" }}>
+        <p className="text-lg sm:text-xl text-slate-700 mb-8 max-w-lg font-medium">
           A Data Science enthusiast passionate about ML, Gen AI, and solving problems with code.
         </p>
-        <div className="flex gap-4 animate-fade-in" style={{ animationDelay: "160ms" }}>
-          <Button asChild size="lg" className="bg-primary text-primary-foreground shadow-lg hover:scale-105 transition-transform duration-200">
+        <div className="flex gap-4">
+          <Button size="lg" className="bg-slate-900 text-white px-7 py-3 rounded-xl shadow hover:bg-slate-800 transition-all font-semibold text-base">
             <a href="#projects">View Projects</a>
           </Button>
-          <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-blue-50 hover:scale-105 transition-transform duration-200">
+          <Button 
+            size="lg"
+            variant="outline"
+            className="border-slate-900 text-slate-900 px-7 py-3 rounded-xl font-semibold text-base hover:bg-blue-50 transition-all"
+            asChild
+          >
             <a href="/resume.pdf" download>Download Resume</a>
           </Button>
         </div>
       </div>
-      {/* Profile Image */}
-      <div className="flex-1 flex justify-center sm:justify-end items-start">
-        <div className="relative w-44 h-44">
-          {/* Subtle background halo */}
-          <div className="absolute inset-0 w-full h-full rounded-full bg-gradient-to-tr from-blue-200 to-blue-100 blur-2xl opacity-50 -z-10"></div>
-          <div className="relative z-10 overflow-hidden rounded-full w-44 h-44 shadow-xl border-4 border-white bg-slate-200 flex items-center justify-center group hover:scale-105 transition-transform duration-300">
-            {/* Placeholder image, replace with real image if available */}
-            <svg width="90" height="90" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg"
-              className="w-28 h-28 text-blue-400 opacity-80" aria-label="Profile image placeholder">
-              <circle cx="45" cy="45" r="45" fill="#e0e7ff"/>
-              <ellipse cx="45" cy="35" rx="16" ry="15" fill="#c7eafd"/>
-              <ellipse cx="45" cy="67" rx="26" ry="15" fill="#bcccdc"/>
+      {/* Profile Circle */}
+      <div className="flex-1 flex justify-center sm:justify-end items-start mb-10 sm:mb-0">
+        <div className="relative">
+          {/* Outer colored accent ring */}
+          <span className="absolute inset-0 w-40 h-40 rounded-full bg-gradient-to-br from-[#deebfd] to-[#bfdfff] blur-sm opacity-90 -z-10"></span>
+          {/* White card/halo */}
+          <span className="absolute inset-2 w-36 h-36 rounded-full bg-white shadow-lg -z-10"></span>
+          {/* Main profile placeholder */}
+          <div className="relative z-10 w-36 h-36 rounded-full border-4 border-blue-200 bg-blue-100 shadow-xl flex items-center justify-center">
+            {/* Simple neutral circle, replace with actual image if available */}
+            <svg
+              width="80"
+              height="80"
+              viewBox="0 0 80 80"
+              fill="none"
+              className="w-20 h-20"
+              aria-label="Profile image placeholder"
+            >
+              <circle cx="40" cy="40" r="40" fill="#e7eefa"/>
+              <ellipse cx="40" cy="33" rx="15" ry="14" fill="#c7eafd"/>
+              <ellipse cx="40" cy="60" rx="23" ry="13" fill="#bfdfff"/>
             </svg>
           </div>
         </div>
@@ -49,4 +57,3 @@ const Hero = () => (
 );
 
 export default Hero;
-
