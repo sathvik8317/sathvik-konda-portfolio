@@ -11,20 +11,20 @@ const Index = () => {
   return (
     <div className="bg-[#003049] min-h-screen font-inter flex flex-col">
       <Navbar />
-      <main className="flex-1 flex flex-col pt-20 sm:pt-28">
+      <main className="flex-1 flex flex-col pt-20 sm:pt-28 gap-14 sm:gap-20">
         <section id="home">
           <Hero />
         </section>
-        <section id="about" className="mt-12 sm:mt-20">
+        <section id="about">
           <About />
         </section>
-        <section id="skills" className="mt-12 sm:mt-20">
+        <section id="skills">
           <Skills />
         </section>
-        <section id="projects" className="mt-12 sm:mt-20">
+        <section id="projects">
           <Projects />
         </section>
-        <section id="contact" className="mt-12 sm:mt-20">
+        <section id="contact">
           <Contact />
         </section>
       </main>

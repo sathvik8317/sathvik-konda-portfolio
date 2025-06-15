@@ -1,15 +1,15 @@
 
 import { Button } from "@/components/ui/button";
 
+const accent = "#ffe066"; // gold/yellow accent
+const accentText = "#003049"; // dark text for contrast
+
 const Hero = () => (
   <section className="relative w-full py-12 sm:py-20 overflow-hidden bg-[#003049]">
     {/* Colored accent blurred blobs */}
     <div className="absolute inset-0 -z-20 pointer-events-none">
-      {/* Top left light blue blob */}
       <div className="absolute left-[-120px] top-[-80px] w-[340px] h-[320px] bg-[#2e9df6] rounded-full blur-[120px] opacity-30" />
-      {/* Bottom right purple/pink blob */}
-      <div className="absolute right-[-100px] bottom-[-80px] w-[360px] h-[320px] bg-[#f471b5] rounded-full blur-[120px] opacity-20" />
-      {/* Center blue blob */}
+      <div className="absolute right-[-100px] bottom-[-80px] w-[360px] h-[320px] bg-[#ffe066] rounded-full blur-[120px] opacity-20" />
       <div className="absolute right-[25vw] top-[22vh] w-[120px] h-[100px] bg-[#75e3ff] rounded-full blur-[60px] opacity-20" />
     </div>
     {/* Main Hero Content */}
@@ -19,7 +19,7 @@ const Hero = () => (
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-black mb-4 tracking-tight leading-tight drop-shadow-xl">
           <span className="text-white">Hi, I'm </span>
           <span
-            className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-white to-sky-300"
+            className="bg-clip-text text-transparent bg-gradient-to-r from-[#ffe066] via-white to-[#75e3ff]"
             style={{
               WebkitTextStroke: '1.2px #fff',
               textShadow: '0 2px 24px rgba(0,0,0,0.20)'
@@ -28,15 +28,15 @@ const Hero = () => (
             Sathvik
           </span>
         </h1>
-        <p className="text-lg sm:text-xl text-sky-50/90 mb-8 max-w-lg font-medium drop-shadow-md">
+        <p className="text-lg sm:text-xl text-blue-100/90 mb-8 max-w-lg font-medium drop-shadow-md">
           A Data Science enthusiast passionate about ML, Gen AI, and solving problems with code.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
           <Button
             size="lg"
-            className="bg-white text-[#003049] px-7 py-3 rounded-xl shadow-xl hover:bg-blue-100/80 transition-all font-semibold text-base ring-2 ring-white/50 border-2 border-white"
+            className="px-7 py-3 rounded-xl shadow-xl font-semibold text-base transition-all bg-[#ffe066] text-[#003049] hover:bg-[#ffd43b] hover:scale-105 border-2 border-[#ffe066] ring-2 ring-white/30"
           >
-            <a href="#projects">View Projects</a>
+            <a href="#projects" className="font-bold">View Projects</a>
           </Button>
           <Button
             size="lg"
@@ -44,7 +44,7 @@ const Hero = () => (
             className="border-2 border-white bg-[#003049] text-white px-7 py-3 rounded-xl font-semibold text-base transition-all hover:bg-white hover:text-[#003049] hover:shadow-lg ring-2 ring-white/50"
             asChild
           >
-            <a href="/resume.pdf" download>Download Resume</a>
+            <a href="/resume.pdf" download className="font-bold">Download Resume</a>
           </Button>
         </div>
       </div>
@@ -52,7 +52,7 @@ const Hero = () => (
       <div className="flex-1 flex justify-center sm:justify-end items-start mb-10 sm:mb-0 relative z-10">
         <div className="relative">
           {/* Outer accent ring with glow */}
-          <span className="absolute inset-0 w-44 h-44 rounded-full bg-gradient-to-br from-yellow-200 via-sky-400/70 to-pink-400 blur-[24px] opacity-70 animate-pulse -z-10"></span>
+          <span className="absolute inset-0 w-44 h-44 rounded-full bg-gradient-to-br from-[#ffe066] via-sky-400/70 to-pink-400 blur-[24px] opacity-70 animate-pulse -z-10"></span>
           {/* White halo */}
           <span className="absolute inset-2 w-40 h-40 rounded-full bg-white/70 shadow-xl -z-10"></span>
           {/* Main profile placeholder */}
@@ -77,3 +77,4 @@ const Hero = () => (
 );
 
 export default Hero;
+

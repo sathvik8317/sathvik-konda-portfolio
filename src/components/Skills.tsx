@@ -44,13 +44,13 @@ const groups = [
 const badgeColors = [
   "bg-blue-50 text-blue-700 border-blue-200",
   "bg-teal-50 text-teal-700 border-teal-200",
-  "bg-orange-50 text-orange-700 border-orange-200",
+  "bg-yellow-50 text-yellow-800 border-yellow-200",
   "bg-purple-50 text-purple-700 border-purple-200",
 ];
 
 const Skills = () => (
-  <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-md px-6 py-8 border border-blue-100/40">
-    <h2 className="text-2xl font-bold text-[#003049] mb-6">Skills</h2>
+  <div className="max-w-4xl mx-auto bg-[#fafdff] rounded-3xl shadow-md px-8 py-8 border border-blue-100/60">
+    <h2 className="text-2xl font-extrabold text-[#003049] mb-6">Skills</h2>
     <div className="grid md:grid-cols-2 gap-6">
       {groups.map((group, i) => (
         <div key={group.label}>
