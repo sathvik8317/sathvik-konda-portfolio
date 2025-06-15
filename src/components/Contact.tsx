@@ -35,7 +35,7 @@ const Contact = () => {
             </a>
           </div>
           <div className="flex gap-3 mt-3">
-            <a href="https://linkedin.com/in/sathvik-konda" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/sathvik-konda-b890121a1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <Linkedin size={28} className="text-[#00BFFF] hover:text-[#B8B8CA] transition" />
             </a>
             <a href="https://github.com/sathvik8317" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
