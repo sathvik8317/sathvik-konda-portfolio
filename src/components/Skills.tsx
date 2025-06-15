@@ -59,7 +59,7 @@ const Skills = () => (
             {group.skills.map(skill => (
               <span
                 key={skill}
-                className={`inline-block py-1 px-3 rounded-full border text-sm font-medium shadow-sm transition transform duration-150 hover:scale-110 focus:scale-110 hover:bg-[#17191A] focus:bg-[#17191A] focus:outline-none focus:ring-2 focus:ring-[#00BFFF] ${badgeColors[i % badgeColors.length]}`}
+                className={`inline-block py-1 px-3 rounded-full border text-sm font-medium shadow-sm transition transform duration-150 hover:scale-110 hover:bg-[#17191A] focus:outline-none focus:ring-2 focus:ring-[#00BFFF] ${badgeColors[i % badgeColors.length]}`}
                 tabIndex={0}
                 aria-label={skill + " skill"}
               >
