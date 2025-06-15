@@ -35,13 +35,13 @@ const projects = [
 ];
 
 const Projects = () => (
-  <div className="max-w-5xl mx-auto">
-    <h2 className="text-2xl font-bold text-slate-900 mb-6">Projects</h2>
+  <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-md border border-blue-100/40 p-6">
+    <h2 className="text-2xl font-bold text-[#003049] mb-6">Projects</h2>
     <div className="grid md:grid-cols-2 gap-6">
       {projects.map((proj, idx) => (
         <div
           key={proj.title}
-          className="rounded-2xl bg-white shadow-sm p-6 border border-slate-100 hover:shadow-blue-100 transition-shadow flex flex-col animate-fade-in"
+          className="rounded-2xl bg-slate-50 shadow-sm p-6 border border-slate-100 hover:shadow-blue-100 transition-shadow flex flex-col animate-fade-in"
           style={{ animationDelay: `${idx * 50}ms` }}
         >
           <h3 className="font-semibold text-lg text-blue-700 mb-2">{proj.title}</h3>

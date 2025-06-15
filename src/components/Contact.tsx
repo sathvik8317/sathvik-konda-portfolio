@@ -17,19 +17,19 @@ const Contact = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-md px-6 py-8 flex flex-col gap-8">
-      <h2 className="text-2xl font-bold text-slate-900 mb-2">Contact</h2>
+    <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-md px-6 py-8 flex flex-col gap-8 border border-blue-100/40">
+      <h2 className="text-2xl font-bold text-[#003049] mb-2">Contact</h2>
       <div className="flex flex-col md:flex-row gap-8">
         {/* Contact Info */}
         <div className="flex-1 space-y-3">
           <div>
-            <span className="font-medium text-slate-700">📧 Email: </span>
+            <span className="font-medium text-[#003049]">📧 Email: </span>
             <a href="mailto:sathvik8317@gmail.com" className="text-blue-600 underline hover:text-blue-800">
               sathvik8317@gmail.com
             </a>
           </div>
           <div>
-            <span className="font-medium text-slate-700">📱 Phone: </span>
+            <span className="font-medium text-[#003049]">📱 Phone: </span>
             <a href="tel:9392529828" className="text-blue-600 underline hover:text-blue-800">
               9392529828
             </a>

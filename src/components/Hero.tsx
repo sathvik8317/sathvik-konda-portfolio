@@ -31,17 +31,17 @@ const Hero = () => (
         <p className="text-lg sm:text-xl text-sky-50/90 mb-8 max-w-lg font-medium drop-shadow-md">
           A Data Science enthusiast passionate about ML, Gen AI, and solving problems with code.
         </p>
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
           <Button
             size="lg"
-            className="bg-white text-[#003049] px-7 py-3 rounded-xl shadow-xl hover:bg-blue-100/80 transition-all font-semibold text-base ring-2 ring-white/30"
+            className="bg-white text-[#003049] px-7 py-3 rounded-xl shadow-xl hover:bg-blue-100/80 transition-all font-semibold text-base ring-2 ring-white/50 border-2 border-white"
           >
             <a href="#projects">View Projects</a>
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="border-white border-2 text-white px-7 py-3 rounded-xl font-semibold text-base hover:bg-white/10 transition-all hover:text-yellow-200 ring-2 ring-white/20"
+            className="border-2 border-white bg-[#003049] text-white px-7 py-3 rounded-xl font-semibold text-base transition-all hover:bg-white hover:text-[#003049] hover:shadow-lg ring-2 ring-white/50"
             asChild
           >
             <a href="/resume.pdf" download>Download Resume</a>
@@ -57,7 +57,6 @@ const Hero = () => (
           <span className="absolute inset-2 w-40 h-40 rounded-full bg-white/70 shadow-xl -z-10"></span>
           {/* Main profile placeholder */}
           <div className="relative z-10 w-40 h-40 rounded-full border-4 border-sky-100/80 bg-white/80 shadow-2xl flex items-center justify-center">
-            {/* Replace this svg with your photo in production */}
             <svg
               width="90"
               height="90"
