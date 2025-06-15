@@ -36,8 +36,8 @@ const Footer = () => (
         </a>
       </div>
       <a
-        href="/resume.pdf"
-        download
+        href="/resume.png"
+        download="Sathvik_Konda_Resume.png"
         className="inline-block font-medium text-sm transition-colors"
         style={{ color: "#00BFFF" }}
       >

@@ -59,8 +59,8 @@ const Hero = () => {
               View Projects
             </a>
             <a
-              href="/resume.pdf"
-              download
+              href="/resume.png"
+              download="Sathvik_Konda_Resume.png"
               className="border border-[#00BFFF] text-[#00BFFF] px-6 py-2 rounded-lg font-semibold hover:bg-[#17191A] hover:text-[#00BFFF] transition hover:-translate-y-1 hover:shadow-lg focus-visible:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00BFFF]"
               tabIndex={0}
             >
