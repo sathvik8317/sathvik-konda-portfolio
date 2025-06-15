@@ -9,7 +9,7 @@ const Footer = () => (
       </div>
       <div className="flex gap-4">
         <a
-          href="https://linkedin.com/in/sathvik-konda"
+          href="https://www.linkedin.com/in/sathvik-konda-b890121a1/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
@@ -38,4 +38,3 @@ const Footer = () => (
 );
 
 export default Footer;
-
