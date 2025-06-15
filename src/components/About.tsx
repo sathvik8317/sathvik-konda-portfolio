@@ -1,4 +1,4 @@
-const About = () => <div className="max-w-4xl w-full rounded-2xl shadow-2xl px-6 py-8 flex flex-col gap-6 border border-[#32324d] bg-[#c9ada7]">
+const About = () => <div className="max-w-4xl w-full rounded-2xl shadow-2xl px-6 py-8 flex flex-col gap-6 border border-[#32324d] bg-[#222222]">
     <h2 className="text-2xl font-bold text-[#22223b] mb-2">About me</h2>
     <div className="flex flex-col sm:flex-row gap-8">
       <div className="flex-1 text-[#22223b] text-base leading-relaxed">
