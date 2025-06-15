@@ -1,19 +1,44 @@
 
 import { useState } from "react";
 import { Linkedin, Github } from "lucide-react";
+import emailjs from "emailjs-com";
+
+const SERVICE_ID = "service_yjdlfnh";
+const TEMPLATE_ID = "template_0of5so2";
+const PUBLIC_KEY = "Zz2QR7rRqxjZBtqpB";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [isSending, setIsSending] = useState(false);
+  const [sendError, setSendError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm(f => ({ ...f, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setForm({ name: "", email: "", message: "" });
+    setIsSending(true);
+    setSendError(null);
+    try {
+      await emailjs.send(
+        SERVICE_ID,
+        TEMPLATE_ID,
+        {
+          from_name: form.name,
+          from_email: form.email,
+          message: form.message,
+        },
+        PUBLIC_KEY
+      );
+      setSubmitted(true);
+      setForm({ name: "", email: "", message: "" });
+    } catch (err) {
+      setSendError("There was an issue sending your message. Please try again.");
+    } finally {
+      setIsSending(false);
+    }
   };
 
   return (
@@ -48,7 +73,9 @@ const Contact = () => {
           className="flex-1 flex flex-col gap-3"
           onSubmit={handleSubmit}
         >
+          <label htmlFor="name" className="text-[#B8B8CA] font-medium">Name</label>
           <input
+            id="name"
             type="text"
             name="name"
             placeholder="Name"
@@ -57,7 +84,9 @@ const Contact = () => {
             value={form.name}
             onChange={handleChange}
           />
+          <label htmlFor="email" className="text-[#B8B8CA] font-medium">Email</label>
           <input
+            id="email"
             type="email"
             name="email"
             placeholder="Email"
@@ -66,7 +95,9 @@ const Contact = () => {
             value={form.email}
             onChange={handleChange}
           />
+          <label htmlFor="message" className="text-[#B8B8CA] font-medium">Message</label>
           <textarea
+            id="message"
             name="message"
             placeholder="Message"
             required
@@ -77,12 +108,22 @@ const Contact = () => {
           ></textarea>
           <button
             type="submit"
-            className="mt-2 bg-[#00BFFF] text-[#22223b] px-4 py-2 rounded-lg font-semibold hover:bg-[#B8B8CA] hover:text-[#17191A] transition"
+            className="mt-2 bg-[#00BFFF] text-[#22223b] px-4 py-2 rounded-lg font-semibold hover:bg-[#B8B8CA] hover:text-[#17191A] transition flex items-center justify-center gap-2"
+            disabled={isSending}
           >
-            Send Message
+            {isSending && (
+              <svg className="animate-spin h-5 w-5 mr-1 text-[#22223b]" viewBox="0 0 24 24">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+              </svg>
+            )}
+            {isSending ? "Sending..." : "Send Message"}
           </button>
           {submitted && (
-            <span className="text-[#00BFFF] text-sm mt-2">Message sent! (Form is a demo only.)</span>
+            <span className="text-[#00BFFF] text-sm mt-2">Message sent!</span>
+          )}
+          {sendError && (
+            <span className="text-red-400 text-sm mt-2">{sendError}</span>
           )}
         </form>
       </div>
