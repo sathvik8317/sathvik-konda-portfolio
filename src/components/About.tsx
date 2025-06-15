@@ -1,6 +1,4 @@
-
-const About = () => (
-  <div className="max-w-4xl mx-auto bg-[#fafdff] rounded-3xl shadow-md px-8 py-8 flex flex-col gap-6 border border-blue-100/60">
+const About = () => <div className="max-w-4xl mx-auto rounded-3xl shadow-md px-8 py-8 flex flex-col gap-6 border border-blue-100/60 bg-[cad2c5] bg-[#22223b]">
     <h2 className="text-2xl font-extrabold text-[#003049] mb-2">About me</h2>
     <div className="flex flex-col sm:flex-row gap-8">
       <div className="flex-1 text-slate-700 text-base leading-relaxed">
@@ -35,7 +33,5 @@ const About = () => (
         </div>
       </div>
     </div>
-  </div>
-);
-
+  </div>;
 export default About;
