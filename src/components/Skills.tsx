@@ -1,76 +1,8 @@
 
-const groups = [
-  {
-    label: "Programming",
-    skills: ["Python", "C++", "SQL"],
-  },
-  {
-    label: "Technologies",
-    skills: [
-      "Machine Learning",
-      "Deep Learning",
-      "Gen AI",
-      "LLMs",
-      "Data Analysis",
-      "Data Visualization",
-      "DSA",
-    ],
-  },
-  {
-    label: "Libraries/Tools",
-    skills: [
-      "Scikit-learn",
-      "TensorFlow",
-      "Keras",
-      "Power BI",
-      "Matplotlib",
-      "Seaborn",
-      "Plotly",
-      "Pandas",
-      "NumPy",
-    ],
-  },
-  {
-    label: "Soft Skills",
-    skills: [
-      "Teamwork",
-      "Problem Solving",
-      "Strategic Thinking",
-      "Time Management",
-    ],
-  },
-];
+import TabbedSkills from "./TabbedSkills";
 
-const badgeColors = [
-  "bg-muted text-[#00BFFF] border-[#00BFFF]/40",
-  "bg-secondary text-[#00BFFF] border-[#00BFFF]/30",
-  "bg-background text-[#00BFFF] border-[#00BFFF]/20",
-  "bg-muted text-[#00BFFF] border-[#00BFFF]/30",
-];
-
-const Skills = () => (
-  <div className="max-w-4xl mx-auto bg-card rounded-2xl shadow-md px-6 py-8">
-    <h2 className="text-2xl font-bold mb-6 text-foreground">Skills</h2>
-    <div className="grid md:grid-cols-2 gap-6">
-      {groups.map((group, i) => (
-        <div key={group.label}>
-          <h3 className="font-semibold mb-3 text-[#00BFFF]">{group.label}</h3>
-          <div className="flex flex-wrap gap-2">
-            {group.skills.map(skill => (
-              <span
-                key={skill}
-                className={`inline-block py-1 px-3 rounded-full border text-sm font-medium shadow-sm transition transform duration-150 hover:scale-110 hover:bg-background focus:outline-none focus:ring-2 focus:ring-[#00BFFF] ${badgeColors[i % badgeColors.length]}`}
-                tabIndex={0}
-                aria-label={skill + " skill"}
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-);
+const Skills = () => {
+  return <TabbedSkills />;
+};
 
 export default Skills;

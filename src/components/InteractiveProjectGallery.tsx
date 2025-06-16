@@ -40,7 +40,7 @@ const projects = [
 const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
   return (
     <div 
-      className="bg-[#1E1F22] rounded-2xl p-4 shadow-[0_4px_8px_rgba(0,0,0,0.3)] transition-all duration-200 hover:scale-105 hover:border-2 hover:border-[#D97706] focus-within:ring-2 focus-within:ring-[#3B82F6] focus-within:outline-none group"
+      className="bg-card border border-border rounded-2xl p-4 shadow-lg transition-all duration-200 hover:scale-105 hover:border-[#D97706] hover:shadow-xl focus-within:ring-2 focus-within:ring-[#3B82F6] focus-within:outline-none group"
       tabIndex={0}
       role="region"
       aria-label={`Project: ${project.title} – View details`}
@@ -53,7 +53,7 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
       </div>
 
       {/* Title */}
-      <h3 className="text-[#F3F4F6] text-xl font-semibold mb-3 leading-tight">
+      <h3 className="text-foreground text-xl font-semibold mb-3 leading-tight">
         {project.title}
       </h3>
 
@@ -70,7 +70,7 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
       </div>
 
       {/* Description */}
-      <p className="text-[#D1D5DB] text-sm mb-4 leading-relaxed">
+      <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
         {project.description}
       </p>
 
@@ -86,7 +86,7 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
         >
           <Github 
             size={24} 
-            className="text-[#F3F4F6] group-hover/icon:text-[#D97706] transition-colors duration-200" 
+            className="text-foreground group-hover/icon:text-[#D97706] transition-colors duration-200" 
           />
         </a>
         <a
@@ -99,7 +99,7 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
         >
           <ExternalLink 
             size={24} 
-            className="text-[#F3F4F6] group-hover/icon:text-[#D97706] transition-colors duration-200" 
+            className="text-foreground group-hover/icon:text-[#D97706] transition-colors duration-200" 
           />
         </a>
       </div>
@@ -110,7 +110,7 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
 const InteractiveProjectGallery = () => {
   return (
     <div className="max-w-6xl mx-auto px-4">
-      <h2 className="text-3xl font-bold text-[#F3F4F6] mb-8 text-center">
+      <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
         Featured Projects
       </h2>
       
