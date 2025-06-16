@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 import { Camera } from "lucide-react";
 
 const Hero = () => {
-  const [profileImage, setProfileImage] = useState<string | null>(null);
+  const [profileImage, setProfileImage] = useState<string | null>("/lovable-uploads/b63dde4d-e010-4d28-a5b8-d4458ee1ae64.png");
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -67,7 +67,7 @@ const Hero = () => {
           <div className="absolute w-44 h-44 bg-gradient-to-tr from-blue-100 to-blue-300 dark:from-blue-900/20 dark:to-blue-700/20 rounded-full left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 blur-2xl opacity-60"></div>
           <div className="relative z-10 overflow-hidden rounded-full w-40 h-40 shadow-lg border-4 border-card bg-card flex items-center justify-center">
             {profileImage ? (
-              <img src={profileImage} alt="User-selected profile" className="w-full h-full object-cover" aria-label="Profile picture" />
+              <img src={profileImage} alt="Sathvik's profile" className="w-full h-full object-cover" aria-label="Profile picture" />
             ) : (
               <span className="text-muted-foreground text-7xl" role="img" aria-label="Default profile avatar">🧑‍💼</span>
             )}
