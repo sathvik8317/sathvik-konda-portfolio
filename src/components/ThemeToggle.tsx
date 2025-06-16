@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
 const THEME_KEY = "theme";
@@ -20,6 +21,7 @@ function getPreferredTheme(): "dark" | "light" {
   if (stored === "dark" || stored === "light") return stored;
   return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
+
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<"light" | "dark">(getPreferredTheme());
 
@@ -47,8 +49,22 @@ export default function ThemeToggle() {
       return () => mql.removeEventListener?.("change", handleChange);
     }
   }, []);
+
   function toggleTheme() {
     setTheme(prev => prev === "dark" ? "light" : "dark");
   }
-  return;
+
+  return (
+    <button
+      onClick={toggleTheme}
+      className="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+      aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+    >
+      {theme === "dark" ? (
+        <Sun size={20} className="text-yellow-500" />
+      ) : (
+        <Moon size={20} className="text-gray-600" />
+      )}
+    </button>
+  );
 }
