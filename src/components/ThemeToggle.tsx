@@ -1,7 +1,5 @@
-
 import { useEffect, useState } from "react";
 import { Sun, Moon } from "lucide-react";
-
 const THEME_KEY = "theme";
 
 // Helper: Set 'dark' class on <html> synchronously
@@ -22,7 +20,6 @@ function getPreferredTheme(): "dark" | "light" {
   if (stored === "dark" || stored === "light") return stored;
   return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
-
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<"light" | "dark">(getPreferredTheme());
 
@@ -50,20 +47,8 @@ export default function ThemeToggle() {
       return () => mql.removeEventListener?.("change", handleChange);
     }
   }, []);
-
   function toggleTheme() {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    setTheme(prev => prev === "dark" ? "light" : "dark");
   }
-
-  return (
-    <button
-      onClick={toggleTheme}
-      className="p-2 rounded-full border border-[#232636] bg-[#212530]/80 flex items-center justify-center transition hover:scale-110 hover:shadow focus:outline-none focus:ring-2 focus:ring-[#00BFFF] focus:ring-offset-2"
-      aria-label="Toggle dark/light mode"
-      tabIndex={0}
-      type="button"
-    >
-      {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-    </button>
-  );
+  return;
 }
