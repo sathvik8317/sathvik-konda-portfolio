@@ -1,13 +1,10 @@
-
 import React from "react";
-
 const Hero = () => {
-  return (
-    <div className="max-w-5xl mx-auto w-full flex flex-col-reverse sm:flex-row items-center gap-10 px-2 pt-8 relative">
+  return <div className="max-w-5xl mx-auto w-full flex flex-col-reverse sm:flex-row items-center gap-10 px-2 pt-8 relative">
       {/* Geometric gradient overlay */}
       <div aria-hidden="true" className="absolute top-0 left-0 w-full h-56 z-0 pointer-events-none" style={{
-        background: "linear-gradient(120deg, rgba(0,191,255,0.07) 30%, rgba(100,138,255,0.03) 100%)"
-      }}>
+      background: "linear-gradient(120deg, rgba(0,191,255,0.07) 30%, rgba(100,138,255,0.03) 100%)"
+    }}>
         {/* SVG pattern for a subtle geometric effect */}
         <svg width="100%" height="100%">
           <defs>
@@ -29,9 +26,7 @@ const Hero = () => {
           <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 leading-tight text-foreground">
             Hi, I'm <span className="text-[#00BFFF]">Sathvik</span>
           </h1>
-          <p className="text-lg sm:text-xl text-muted-foreground mb-6 max-w-lg font-normal leading-relaxed">
-            A Data Science enthusiast passionate about ML, Gen AI, and solving problems with code.
-          </p>
+          <p className="text-lg sm:text-xl text-muted-foreground mb-6 max-w-lg font-normal leading-relaxed">Passionate about data science, I specialize in machine learning and generative AI to develop intelligent, impactful solutions.</p>
           <div className="flex gap-4">
             <a href="#projects" className="bg-[#00BFFF] text-background px-6 py-2 rounded-lg font-semibold shadow transition duration-150 hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00BFFF] focus-visible:ring-offset-2" tabIndex={0}>
               View Projects
@@ -51,8 +46,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Hero;
