@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Menu } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
@@ -21,17 +22,10 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-30"
-      style={{
-        background: "#212530",
-        boxShadow: "0 2px 8px rgba(0,0,0,0.5)",
-        borderBottom: "1px solid #232636"
-      }}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-30 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-5xl mx-auto px-4 flex items-center justify-between h-16 sm:h-20">
         <div className="flex items-center gap-3">
-          <span className="font-bold text-lg tracking-tight" style={{ color: "#E5E5F0" }}>
+          <span className="font-bold text-lg tracking-tight text-foreground">
             Sathvik Konda
           </span>
           <ThemeToggle />
@@ -40,12 +34,7 @@ const Navbar = () => {
           {navLinks.map(link => (
             <li key={link.to}>
               <button
-                className="relative px-2 py-1 font-medium transition-colors after:block after:w-0 after:h-0.5 after:bg-[#00BFFF] after:transition-all after:duration-200 hover:after:w-full after:mt-1 focus:outline-none focus:ring-2 focus:ring-[#00BFFF] focus:ring-offset-2"
-                style={{
-                  color: "#E5E5F0"
-                }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#00BFFF")}
-                onMouseLeave={e => (e.currentTarget.style.color = "#E5E5F0")}
+                className="relative px-2 py-1 font-medium transition-colors text-foreground hover:text-[#00BFFF] after:block after:w-0 after:h-0.5 after:bg-[#00BFFF] after:transition-all after:duration-200 hover:after:w-full after:mt-1 focus:outline-none focus:ring-2 focus:ring-[#00BFFF] focus:ring-offset-2"
                 onClick={() => scrollToSection(link.to)}
                 tabIndex={0}
               >
@@ -60,13 +49,10 @@ const Navbar = () => {
           onClick={() => setMenuOpen(m => !m)}
           aria-label="Toggle navigation"
         >
-          <Menu size={28} color="#E5E5F0" />
+          <Menu size={28} className="text-foreground" />
         </button>
         {menuOpen && (
-          <div
-            className="absolute right-4 top-16 border rounded-lg shadow-lg w-40 flex flex-col md:hidden animate-fade-in"
-            style={{ background: "#212530", boxShadow: "0 2px 8px rgba(0,0,0,0.5)", borderColor: "#232636" }}
-          >
+          <div className="absolute right-4 top-16 border border-border rounded-lg shadow-lg w-40 flex flex-col md:hidden animate-fade-in bg-background">
             {navLinks.map(link => (
               <button
                 key={link.to}
@@ -74,12 +60,7 @@ const Navbar = () => {
                   setMenuOpen(false);
                   scrollToSection(link.to);
                 }}
-                className="py-2 px-4 text-left w-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#00BFFF] focus:ring-offset-2"
-                style={{
-                  color: "#E5E5F0"
-                }}
-                onMouseEnter={e => (e.currentTarget.style.color = "#00BFFF")}
-                onMouseLeave={e => (e.currentTarget.style.color = "#E5E5F0")}
+                className="py-2 px-4 text-left w-full transition-colors text-foreground hover:text-[#00BFFF] focus:outline-none focus:ring-2 focus:ring-[#00BFFF] focus:ring-offset-2"
                 tabIndex={0}
               >
                 {link.label}
@@ -91,4 +72,5 @@ const Navbar = () => {
     </nav>
   );
 };
+
 export default Navbar;

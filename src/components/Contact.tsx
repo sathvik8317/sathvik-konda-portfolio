@@ -42,29 +42,29 @@ const Contact = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto bg-[#272930] rounded-2xl shadow-md px-6 py-8 flex flex-col gap-8">
-      <h2 className="text-2xl font-bold mb-2 text-[#B8B8CA]">Contact</h2>
+    <div className="max-w-4xl mx-auto bg-card rounded-2xl shadow-md px-6 py-8 flex flex-col gap-8">
+      <h2 className="text-2xl font-bold mb-2 text-foreground">Contact</h2>
       <div className="flex flex-col md:flex-row gap-8">
         {/* Contact Info */}
-        <div className="flex-1 space-y-3 text-[#B8B8CA]">
+        <div className="flex-1 space-y-3 text-foreground">
           <div>
             <span className="font-medium">📧 Email: </span>
-            <a href="mailto:sathvik8317@gmail.com" className="text-[#00BFFF] underline hover:text-[#B8B8CA]">
+            <a href="mailto:sathvik8317@gmail.com" className="text-[#00BFFF] underline hover:text-muted-foreground">
               sathvik8317@gmail.com
             </a>
           </div>
           <div>
             <span className="font-medium">📱 Phone: </span>
-            <a href="tel:9392529828" className="text-[#00BFFF] underline hover:text-[#B8B8CA]">
+            <a href="tel:9392529828" className="text-[#00BFFF] underline hover:text-muted-foreground">
               9392529828
             </a>
           </div>
           <div className="flex gap-3 mt-3">
             <a href="https://www.linkedin.com/in/sathvik-konda-b890121a1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <Linkedin size={28} className="text-[#00BFFF] hover:text-[#B8B8CA] transition" />
+              <Linkedin size={28} className="text-[#00BFFF] hover:text-muted-foreground transition" />
             </a>
             <a href="https://github.com/sathvik8317" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <Github size={28} className="text-[#00BFFF] hover:text-[#B8B8CA] transition" />
+              <Github size={28} className="text-[#00BFFF] hover:text-muted-foreground transition" />
             </a>
           </div>
         </div>
@@ -73,46 +73,46 @@ const Contact = () => {
           className="flex-1 flex flex-col gap-3"
           onSubmit={handleSubmit}
         >
-          <label htmlFor="name" className="text-[#B8B8CA] font-medium">Name</label>
+          <label htmlFor="name" className="text-foreground font-medium">Name</label>
           <input
             id="name"
             type="text"
             name="name"
             placeholder="Name"
             required
-            className="border border-[#22223b] rounded-lg px-4 py-2 bg-[#22223b] text-[#B8B8CA] focus:outline-none focus:border-[#00BFFF] placeholder:text-[#B8B8CA]/60"
+            className="border border-border rounded-lg px-4 py-2 bg-background text-foreground focus:outline-none focus:border-[#00BFFF] placeholder:text-muted-foreground"
             value={form.name}
             onChange={handleChange}
           />
-          <label htmlFor="email" className="text-[#B8B8CA] font-medium">Email</label>
+          <label htmlFor="email" className="text-foreground font-medium">Email</label>
           <input
             id="email"
             type="email"
             name="email"
             placeholder="Email"
             required
-            className="border border-[#22223b] rounded-lg px-4 py-2 bg-[#22223b] text-[#B8B8CA] focus:outline-none focus:border-[#00BFFF] placeholder:text-[#B8B8CA]/60"
+            className="border border-border rounded-lg px-4 py-2 bg-background text-foreground focus:outline-none focus:border-[#00BFFF] placeholder:text-muted-foreground"
             value={form.email}
             onChange={handleChange}
           />
-          <label htmlFor="message" className="text-[#B8B8CA] font-medium">Message</label>
+          <label htmlFor="message" className="text-foreground font-medium">Message</label>
           <textarea
             id="message"
             name="message"
             placeholder="Message"
             required
             rows={4}
-            className="border border-[#22223b] rounded-lg px-4 py-2 bg-[#22223b] text-[#B8B8CA] focus:outline-none focus:border-[#00BFFF] placeholder:text-[#B8B8CA]/60"
+            className="border border-border rounded-lg px-4 py-2 bg-background text-foreground focus:outline-none focus:border-[#00BFFF] placeholder:text-muted-foreground"
             value={form.message}
             onChange={handleChange}
           ></textarea>
           <button
             type="submit"
-            className="mt-2 bg-[#00BFFF] text-[#22223b] px-4 py-2 rounded-lg font-semibold hover:bg-[#B8B8CA] hover:text-[#17191A] transition flex items-center justify-center gap-2"
+            className="mt-2 bg-[#00BFFF] text-background px-4 py-2 rounded-lg font-semibold hover:bg-[#00BFFF]/90 transition flex items-center justify-center gap-2"
             disabled={isSending}
           >
             {isSending && (
-              <svg className="animate-spin h-5 w-5 mr-1 text-[#22223b]" viewBox="0 0 24 24">
+              <svg className="animate-spin h-5 w-5 mr-1 text-background" viewBox="0 0 24 24">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
               </svg>
@@ -123,7 +123,7 @@ const Contact = () => {
             <span className="text-[#00BFFF] text-sm mt-2">Message sent!</span>
           )}
           {sendError && (
-            <span className="text-red-400 text-sm mt-2">{sendError}</span>
+            <span className="text-destructive text-sm mt-2">{sendError}</span>
           )}
         </form>
       </div>

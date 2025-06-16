@@ -42,15 +42,15 @@ const groups = [
 ];
 
 const badgeColors = [
-  "bg-[#22223b] text-[#00BFFF] border-[#00BFFF]/40",
-  "bg-[#272930] text-[#00BFFF] border-[#00BFFF]/30",
-  "bg-[#17191A] text-[#00BFFF] border-[#00BFFF]/20",
-  "bg-[#22223b] text-[#00BFFF] border-[#00BFFF]/30",
+  "bg-muted text-[#00BFFF] border-[#00BFFF]/40",
+  "bg-secondary text-[#00BFFF] border-[#00BFFF]/30",
+  "bg-background text-[#00BFFF] border-[#00BFFF]/20",
+  "bg-muted text-[#00BFFF] border-[#00BFFF]/30",
 ];
 
 const Skills = () => (
-  <div className="max-w-4xl mx-auto bg-[#272930] rounded-2xl shadow-md px-6 py-8">
-    <h2 className="text-2xl font-bold mb-6 text-[#B8B8CA]">Skills</h2>
+  <div className="max-w-4xl mx-auto bg-card rounded-2xl shadow-md px-6 py-8">
+    <h2 className="text-2xl font-bold mb-6 text-foreground">Skills</h2>
     <div className="grid md:grid-cols-2 gap-6">
       {groups.map((group, i) => (
         <div key={group.label}>
@@ -59,7 +59,7 @@ const Skills = () => (
             {group.skills.map(skill => (
               <span
                 key={skill}
-                className={`inline-block py-1 px-3 rounded-full border text-sm font-medium shadow-sm transition transform duration-150 hover:scale-110 hover:bg-[#17191A] focus:outline-none focus:ring-2 focus:ring-[#00BFFF] ${badgeColors[i % badgeColors.length]}`}
+                className={`inline-block py-1 px-3 rounded-full border text-sm font-medium shadow-sm transition transform duration-150 hover:scale-110 hover:bg-background focus:outline-none focus:ring-2 focus:ring-[#00BFFF] ${badgeColors[i % badgeColors.length]}`}
                 tabIndex={0}
                 aria-label={skill + " skill"}
               >
