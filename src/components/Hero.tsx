@@ -1,3 +1,4 @@
+
 import React from "react";
 const Hero = () => {
   return <div className="max-w-5xl mx-auto w-full flex flex-col-reverse sm:flex-row items-center gap-10 px-2 pt-8 relative">
@@ -31,7 +32,7 @@ const Hero = () => {
             <a href="#projects" className="bg-[#00BFFF] text-background px-6 py-2 rounded-lg font-semibold shadow transition duration-150 hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00BFFF] focus-visible:ring-offset-2" tabIndex={0}>
               View Projects
             </a>
-            <a href="/resume.png" download="Sathvik_Konda_Resume.png" className="border border-[#00BFFF] text-[#00BFFF] px-6 py-2 rounded-lg font-semibold transition duration-150 hover:bg-background hover:text-[#00BFFF] hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00BFFF] focus-visible:ring-offset-2" tabIndex={0}>
+            <a href="/lovable-uploads/592ccce5-475f-4511-a0bd-1fb2cb6c6ed4.png" download="Sathvik_Konda_Resume.png" className="border border-[#00BFFF] text-[#00BFFF] px-6 py-2 rounded-lg font-semibold transition duration-150 hover:bg-background hover:text-[#00BFFF] hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00BFFF] focus-visible:ring-offset-2" tabIndex={0}>
               Download Resume
             </a>
           </div>
