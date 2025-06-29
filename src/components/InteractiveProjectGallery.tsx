@@ -32,7 +32,7 @@ const projects = [
     category: "Business Intelligence",
     description: "Interactive sales dashboard providing insights into pizza chain performance, customer preferences, and revenue optimization.",
     tech: ["Power BI", "SQL"],
-    github: "https://github.com/yourusername/pizza-sales",
+    github: "https://github.com/sathvik8317/Pizza-Sales-Analysis",
     demo: "https://pizza-sales-demo.com",
   },
 ];
