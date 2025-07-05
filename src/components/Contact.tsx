@@ -1,11 +1,6 @@
 
 import { useState } from "react";
 import { Linkedin, Github } from "lucide-react";
-import emailjs from "emailjs-com";
-
-const SERVICE_ID = "service_yjdlfnh";
-const TEMPLATE_ID = "template_0of5so2";
-const PUBLIC_KEY = "Zz2QR7rRqxjZBtqpB";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -22,18 +17,21 @@ const Contact = () => {
     setIsSending(true);
     setSendError(null);
     try {
-      await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        {
-          from_name: form.name,
-          from_email: form.email,
-          message: form.message,
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+      const response = await fetch(`${apiUrl}/api/messages`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
-        PUBLIC_KEY
-      );
-      setSubmitted(true);
-      setForm({ name: "", email: "", message: "" });
+        body: JSON.stringify(form),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setSendError("There was an issue sending your message. Please try again.");
+      }
     } catch (err) {
       setSendError("There was an issue sending your message. Please try again.");
     } finally {
