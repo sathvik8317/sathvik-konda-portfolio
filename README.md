@@ -1,73 +1,85 @@
-# Welcome to your Lovable project
+# My Personal Portfolio
 
-## Project info
+This is a modern, responsive personal portfolio website designed to showcase my projects, skills, and experience. It features a clean user interface and a functional contact form to allow visitors to get in touch.
 
-**URL**: https://lovable.dev/projects/5dcffda2-b0f3-4025-b3a4-8c9c38ba15d8
+## Features
 
-## How can I edit this code?
+-   **Responsive Design:** Optimized for various screen sizes, from mobile to desktop.
+-   **Project Showcase:** Dedicated section to highlight key projects with descriptions.
+-   **Skills Section:** Displays technical skills and proficiencies.
+-   **Contact Form:** A functional form for visitors to send messages, powered by a custom Node.js backend and MongoDB.
 
-There are several ways of editing your application.
+## Technologies Used
 
-**Use Lovable**
+### Frontend
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/5dcffda2-b0f3-4025-b3a4-8c9c38ba15d8) and start prompting.
+-   **React:** A JavaScript library for building user interfaces.
+-   **Vite:** A fast build tool for modern web projects.
+-   **TypeScript:** A typed superset of JavaScript that compiles to plain JavaScript.
+-   **Tailwind CSS:** A utility-first CSS framework for rapid UI development.
+-   **shadcn/ui:** A collection of re-usable components built with Radix UI and Tailwind CSS.
 
-Changes made via Lovable will be committed automatically to this repo.
+### Backend
 
-**Use your preferred IDE**
+-   **Node.js:** A JavaScript runtime built on Chrome's V8 JavaScript engine.
+-   **Express.js:** A fast, unopinionated, minimalist web framework for Node.js.
+-   **Mongoose:** An elegant MongoDB object modeling for Node.js.
+-   **MongoDB:** A NoSQL document database for storing contact messages.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Getting Started (Local Development)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+To run this project locally, follow these steps:
 
-Follow these steps:
+### Prerequisites
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+-   Node.js (LTS version recommended)
+-   npm (Node Package Manager)
+-   MongoDB (Community Server installed and running locally)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Installation
 
-# Step 3: Install the necessary dependencies.
-npm i
+1.  **Clone the repository:**
+    ```bash
+    git clone <YOUR_REPOSITORY_URL>
+    cd <YOUR_PROJECT_NAME>
+    ```
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+2.  **Install frontend dependencies:**
+    ```bash
+    npm install
+    ```
 
-**Edit a file directly in GitHub**
+3.  **Install backend dependencies:**
+    ```bash
+    cd backend
+    npm install
+    cd ..
+    ```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Running the Application
 
-**Use GitHub Codespaces**
+1.  **Start your local MongoDB instance.**
+    Ensure your MongoDB server is running. If you installed it as a service, it should start automatically. Otherwise, you might need to run `mongod` from your MongoDB installation's `bin` directory.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+2.  **Start the backend server:**
+    ```bash
+    cd backend
+    npm start
+    ```
+    This will start the backend on `http://localhost:5000`.
 
-## What technologies are used for this project?
+3.  **Start the frontend development server:**
+    ```bash
+    npm run dev
+    ```
+    This will typically open your portfolio in your browser at `http://localhost:5173` (or another available port).
 
-This project is built with:
+## Deployment
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+This project is designed for deployment using modern cloud platforms:
 
-## How can I deploy this project?
+-   **Frontend:** Can be deployed to static hosting services like [Netlify](https://www.netlify.com/) or [Vercel](https://vercel.com/) for free.
+-   **Backend:** Can be deployed as a web service to platforms like [Render](https://render.com/) (free tier available).
+-   **Database:** A cloud-hosted MongoDB instance, such as [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) (free M0 cluster available), is recommended for the live environment.
 
-Simply open [Lovable](https://lovable.dev/projects/5dcffda2-b0f3-4025-b3a4-8c9c38ba15d8) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Refer to the respective platform documentation for detailed deployment instructions.
