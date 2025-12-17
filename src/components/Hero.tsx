@@ -32,7 +32,7 @@ const Hero = () => {
             <a href="#projects" className="bg-[#00BFFF] text-background px-6 py-2 rounded-lg font-semibold shadow transition duration-150 hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00BFFF] focus-visible:ring-offset-2" tabIndex={0}>
               View Projects
             </a>
-            <a href="/lovable-uploads/592ccce5-475f-4511-a0bd-1fb2cb6c6ed4.png" download="Sathvik_Konda_Resume.png" className="border border-[#00BFFF] text-[#00BFFF] px-6 py-2 rounded-lg font-semibold transition duration-150 hover:bg-background hover:text-[#00BFFF] hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00BFFF] focus-visible:ring-offset-2" tabIndex={0}>
+            <a href="/uploads/592ccce5-475f-4511-a0bd-1fb2cb6c6ed4.png" download="Sathvik_Konda_Resume.png" className="border border-[#00BFFF] text-[#00BFFF] px-6 py-2 rounded-lg font-semibold transition duration-150 hover:bg-background hover:text-[#00BFFF] hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00BFFF] focus-visible:ring-offset-2" tabIndex={0}>
               Download Resume
             </a>
           </div>
@@ -43,7 +43,7 @@ const Hero = () => {
         <div className="relative">
           <div className="absolute w-44 h-44 bg-gradient-to-tr from-blue-100 to-blue-300 dark:from-blue-900/20 dark:to-blue-700/20 rounded-full left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 blur-2xl opacity-60"></div>
           <div className="relative z-10 overflow-hidden rounded-full w-40 h-40 shadow-lg border-4 border-card bg-card flex items-center justify-center">
-            <img src="/lovable-uploads/1f011f33-bacd-464f-a132-6eb79d9cc81d.png" alt="Sathvik's profile" className="w-full h-full object-cover" aria-label="Profile picture" />
+            <img src="/uploads/1f011f33-bacd-464f-a132-6eb79d9cc81d.png" alt="Sathvik's profile" className="w-full h-full object-cover" aria-label="Profile picture" />
           </div>
         </div>
       </div>
