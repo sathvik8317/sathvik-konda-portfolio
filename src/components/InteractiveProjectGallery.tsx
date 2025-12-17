@@ -1,6 +1,6 @@
 
 import React from "react";
-import { ExternalLink, Github } from "lucide-react";
+import { Github } from "lucide-react";
 
 const projects = [
   {
@@ -8,33 +8,29 @@ const projects = [
     category: "AI/ML",
     description: "Intelligent document analysis system that allows users to query PDF content using natural language processing and retrieval-augmented generation.",
     tech: ["LangChain", "Streamlit", "ChromaDB", "FastEmbed", "ChatOllama"],
-    github: "https://github.com/yourusername/chatpdf",
-    demo: "https://chatpdf-demo.com",
+    github: "https://github.com/sathvik8317/ChatPDF-AI-Powered-Document-Q-A-System",
   },
   {
     title: "X-ray Image Classification",
     category: "Deep Learning",
     description: "Advanced medical imaging classifier using convolutional neural networks to detect and classify anomalies in chest X-ray images.",
     tech: ["TensorFlow", "Keras", "Streamlit"],
-    github: "https://github.com/yourusername/xray-classifier",
-    demo: "https://xray-demo.com",
+    github: "https://github.com/sathvik8317/X-ray-Image-Classification",
   },
   {
     title: "Amazon Prime Video Analytics",
     category: "Data Analytics",
     description: "Comprehensive dashboard analyzing streaming trends, content performance, and user engagement metrics across Prime Video's catalog.",
     tech: ["Power BI", "SQL", "DAX"],
+    tech: ["Power BI", "SQL", "DAX"],
     github: "https://github.com/yourusername/prime-analytics",
-    demo: "https://prime-analytics-demo.com",
-  },
   {
     title: "Pizza Sales Report",
     category: "Business Intelligence",
     description: "Interactive sales dashboard providing insights into pizza chain performance, customer preferences, and revenue optimization.",
     tech: ["Power BI", "SQL"],
+    tech: ["Power BI", "SQL"],
     github: "https://github.com/sathvik8317/Pizza-Sales-Analysis",
-    demo: "https://pizza-sales-demo.com",
-  },
 ];
 
 const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
@@ -85,19 +81,6 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
           style={{ minHeight: '44px', minWidth: '44px' }}
         >
           <Github 
-            size={24} 
-            className="text-foreground group-hover/icon:text-[#D97706] transition-colors duration-200" 
-          />
-        </a>
-        <a
-          href={project.demo}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="p-2 rounded-lg transition-colors duration-200 hover:bg-[#D97706]/10 focus:outline-none focus:ring-2 focus:ring-[#3B82F6] group/icon"
-          aria-label={`Open live demo of ${project.title}`}
-          style={{ minHeight: '44px', minWidth: '44px' }}
-        >
-          <ExternalLink 
             size={24} 
             className="text-foreground group-hover/icon:text-[#D97706] transition-colors duration-200" 
           />
