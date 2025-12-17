@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Linkedin, Github } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -18,6 +19,7 @@ const Contact = () => {
     setIsSending(true);
     setSendError(null);
     try {
+      // 1. Save to Supabase
       const { error } = await supabase
         .from('messages')
         .insert([
@@ -25,6 +27,28 @@ const Contact = () => {
         ]);
 
       if (error) throw error;
+
+      // 2. Send Email using EmailJS
+      // Replace these with your actual EmailJS Service ID, Template ID, and Public Key
+      // Sign up at https://www.emailjs.com/
+      const serviceID = "YOUR_SERVICE_ID";
+      const templateID = "YOUR_TEMPLATE_ID";
+      const publicKey = "YOUR_PUBLIC_KEY";
+
+      // Only attempt to send email if keys are configured (not default placeholders)
+      if (serviceID !== "YOUR_SERVICE_ID") {
+        await emailjs.send(
+          serviceID,
+          templateID,
+          {
+            from_name: form.name,
+            from_email: form.email,
+            message: form.message,
+            to_email: "sathvik8317@gmail.com", // Your email address
+          },
+          publicKey
+        );
+      }
 
       setSubmitted(true);
       setForm({ name: "", email: "", message: "" });
