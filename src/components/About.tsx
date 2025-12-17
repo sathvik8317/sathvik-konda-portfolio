@@ -26,7 +26,7 @@ const About = () => (
           <div>
             <div className="font-medium text-foreground">B.Tech – CSE (Data Science)</div>
             <div className="text-sm text-muted-foreground">VNR VJIET, 2022 – Present</div>
-            <div className="text-sm text-[#00BFFF] font-semibold">GPA: 8.95</div>
+            <div className="text-sm text-[#00BFFF] font-semibold">CGPA: 8.74</div>
           </div>
           <div>
             <div className="font-medium text-foreground">Class 12 – Shine Junior College</div>

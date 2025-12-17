@@ -18,13 +18,6 @@ const projects = [
     github: "https://github.com/sathvik8317/X-ray-Image-Classification",
   },
   {
-    title: "Amazon Prime Video Analytics",
-    category: "Data Analytics",
-    description: "Comprehensive dashboard analyzing streaming trends, content performance, and user engagement metrics across Prime Video's catalog.",
-    tech: ["Power BI", "SQL", "DAX"],
-    github: "https://github.com/yourusername/prime-analytics",
-  },
-  {
     title: "Pizza Sales Report",
     category: "Business Intelligence",
     description: "Interactive sales dashboard providing insights into pizza chain performance, customer preferences, and revenue optimization.",
