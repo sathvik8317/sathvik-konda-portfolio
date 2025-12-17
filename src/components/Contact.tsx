@@ -20,7 +20,7 @@ const Contact = () => {
     setSendError(null);
     try {
       // 1. Save to Supabase
-      const { error } = await supabase
+      const { error } = await (supabase as any)
         .from('messages')
         .insert([
           { name: form.name, email: form.email, message: form.message }
@@ -29,14 +29,13 @@ const Contact = () => {
       if (error) throw error;
 
       // 2. Send Email using EmailJS
-      // Replace these with your actual EmailJS Service ID, Template ID, and Public Key
-      // Sign up at https://www.emailjs.com/
-      const serviceID = "YOUR_SERVICE_ID";
-      const templateID = "YOUR_TEMPLATE_ID";
-      const publicKey = "YOUR_PUBLIC_KEY";
+      const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-      // Only attempt to send email if keys are configured (not default placeholders)
-      if (serviceID !== "YOUR_SERVICE_ID") {
+      if (!serviceID || !templateID || !publicKey) {
+        console.warn("EmailJS keys are missing in environment variables");
+      } else {
         await emailjs.send(
           serviceID,
           templateID,
@@ -44,7 +43,7 @@ const Contact = () => {
             from_name: form.name,
             from_email: form.email,
             message: form.message,
-            to_email: "sathvik8317@gmail.com", // Your email address
+            to_email: "sathvik8317@gmail.com",
           },
           publicKey
         );
