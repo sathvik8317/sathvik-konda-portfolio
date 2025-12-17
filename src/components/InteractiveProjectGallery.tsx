@@ -22,15 +22,15 @@ const projects = [
     category: "Data Analytics",
     description: "Comprehensive dashboard analyzing streaming trends, content performance, and user engagement metrics across Prime Video's catalog.",
     tech: ["Power BI", "SQL", "DAX"],
-    tech: ["Power BI", "SQL", "DAX"],
     github: "https://github.com/yourusername/prime-analytics",
+  },
   {
     title: "Pizza Sales Report",
     category: "Business Intelligence",
     description: "Interactive sales dashboard providing insights into pizza chain performance, customer preferences, and revenue optimization.",
     tech: ["Power BI", "SQL"],
-    tech: ["Power BI", "SQL"],
     github: "https://github.com/sathvik8317/Pizza-Sales-Analysis",
+  },
 ];
 
 const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
