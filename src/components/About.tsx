@@ -11,11 +11,11 @@ const About = () => (
         <div className="mt-10">
           <h3 className="font-semibold mb-2 text-[#00BFFF] text-xl leading-tight">Research Work</h3>
           <p className="text-sm text-muted-foreground">
-            Worked on a research paper titled{' '}
+            Presented and published research paper{' '}
             <span className="italic font-medium">
-              "A Modular Time-Aware SMOTE and Autoencoder-XGBoost Framework for Interpretable Credit Card Fraud Detection."
-            </span>{" "}
-            Final draft completed and being prepared for publication.
+              "A Modular Time-Aware SMOTE and Autoencoder-XGBoost Framework for Interpretable Credit Card Fraud Detection"
+            </span>{' '}
+            at ICACECS Conference 2025.
           </p>
         </div>
       </div>
