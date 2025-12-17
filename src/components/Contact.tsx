@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { Linkedin, Github } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -17,22 +18,18 @@ const Contact = () => {
     setIsSending(true);
     setSendError(null);
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000';
-      const response = await fetch(`${apiUrl}/api/messages`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
+      const { error } = await supabase
+        .from('messages')
+        .insert([
+          { name: form.name, email: form.email, message: form.message }
+        ]);
 
-      if (response.ok) {
-        setSubmitted(true);
-        setForm({ name: "", email: "", message: "" });
-      } else {
-        setSendError("There was an issue sending your message. Please try again.");
-      }
+      if (error) throw error;
+
+      setSubmitted(true);
+      setForm({ name: "", email: "", message: "" });
     } catch (err) {
+      console.error("Error sending message:", err);
       setSendError("There was an issue sending your message. Please try again.");
     } finally {
       setIsSending(false);
