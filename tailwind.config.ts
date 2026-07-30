@@ -20,10 +20,31 @@ export default {
 		},
 		extend: {
       fontFamily: {
-        inter: ['Inter', 'sans-serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif']
+        sans: ['Geist', 'Helvetica Neue', 'system-ui', 'sans-serif'],
+        display: ['"IBM Plex Sans Condensed"', 'Helvetica Neue', 'sans-serif'],
+        mono: ['"JetBrains Mono Variable"', 'ui-monospace', 'monospace']
+      },
+      letterSpacing: {
+        tighter: '-.03em',
+        snug: '.02em',
+        open: '.06em',
+        wide2: '.08em',
+        wider2: '.14em',
+        widest2: '.18em'
+      },
+      maxWidth: {
+        shell: '72rem'
+      },
+      boxShadow: {
+        glow: '0 0 32px hsl(var(--primary) / 0.18)'
       },
 			colors: {
+					signal2: 'hsl(var(--signal-2))',
+					surface3: 'hsl(var(--surface-3))',
+					line: {
+						DEFAULT: 'hsl(var(--border))',
+						strong: 'hsl(var(--line-strong))'
+					},
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
@@ -71,7 +92,8 @@ export default {
 			borderRadius: {
 				lg: 'var(--radius)',
 				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				sm: 'calc(var(--radius) - 4px)',
+				xs: '2px'
 			},
 			keyframes: {
 				'accordion-down': {
@@ -89,11 +111,26 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'reveal': {
+					from: { opacity: '0', transform: 'translateY(12px)' },
+					to: { opacity: '1', transform: 'translateY(0)' }
+				},
+				'fade-in': {
+					from: { opacity: '0' },
+					to: { opacity: '1' }
+				},
+				'caret-blink': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'reveal': 'reveal 0.5s cubic-bezier(.22,1,.36,1) both',
+				'fade-in': 'fade-in 0.3s ease-out both',
+				'caret-blink': 'caret-blink 1s step-end infinite'
 			}
 		}
 	},

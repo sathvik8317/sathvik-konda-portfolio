@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Linkedin, Github } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import emailjs from "@emailjs/browser";
+import SectionHeader from "./SectionHeader";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -60,90 +61,106 @@ const Contact = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto bg-card rounded-2xl shadow-md px-6 py-8 flex flex-col gap-8">
-      <h2 className="text-2xl font-bold mb-2 text-foreground">Contact</h2>
-      <div className="flex flex-col md:flex-row gap-8">
-        {/* Contact Info */}
-        <div className="flex-1 space-y-3 text-foreground">
-          <div>
-            <span className="font-medium">📧 Email: </span>
-            <a href="mailto:sathvik8317@gmail.com" className="text-[#00BFFF] underline hover:text-muted-foreground">
-              sathvik8317@gmail.com
-            </a>
+    <div className="max-w-shell mx-auto px-4">
+      <SectionHeader index="04" title="Contact" />
+      <div className="bg-card border border-border rounded-md px-6 py-8 flex flex-col gap-8">
+        <div className="flex flex-col md:flex-row gap-8">
+          {/* Contact Info */}
+          <div className="flex-1 space-y-4">
+            <div className="font-mono text-sm flex gap-2">
+              <span className="text-muted-foreground">email</span>
+              <span className="text-muted-foreground">=</span>
+              <a href="mailto:sathvik8317@gmail.com" className="text-primary hover:underline">
+                sathvik8317@gmail.com
+              </a>
+            </div>
+            <div className="font-mono text-sm flex gap-2">
+              <span className="text-muted-foreground">phone</span>
+              <span className="text-muted-foreground">=</span>
+              <a href="tel:9392529828" className="text-primary hover:underline">
+                9392529828
+              </a>
+            </div>
+            <div className="flex gap-3 mt-4">
+              <a
+                href="https://www.linkedin.com/in/sathvik-konda-b890121a1/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="p-2 rounded-md border border-border text-primary hover:border-primary transition-colors focus:outline-none focus:ring-2 focus:ring-ring"
+              >
+                <Linkedin size={20} />
+              </a>
+              <a
+                href="https://github.com/sathvik8317"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                className="p-2 rounded-md border border-border text-primary hover:border-primary transition-colors focus:outline-none focus:ring-2 focus:ring-ring"
+              >
+                <Github size={20} />
+              </a>
+            </div>
           </div>
-          <div>
-            <span className="font-medium">📱 Phone: </span>
-            <a href="tel:9392529828" className="text-[#00BFFF] underline hover:text-muted-foreground">
-              9392529828
-            </a>
-          </div>
-          <div className="flex gap-3 mt-3">
-            <a href="https://www.linkedin.com/in/sathvik-konda-b890121a1/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <Linkedin size={28} className="text-[#00BFFF] hover:text-muted-foreground transition" />
-            </a>
-            <a href="https://github.com/sathvik8317" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <Github size={28} className="text-[#00BFFF] hover:text-muted-foreground transition" />
-            </a>
-          </div>
-        </div>
-        {/* Contact Form */}
-        <form
-          className="flex-1 flex flex-col gap-3"
-          onSubmit={handleSubmit}
-        >
-          <label htmlFor="name" className="text-foreground font-medium">Name</label>
-          <input
-            id="name"
-            type="text"
-            name="name"
-            placeholder="Name"
-            required
-            className="border border-border rounded-lg px-4 py-2 bg-background text-foreground focus:outline-none focus:border-[#00BFFF] placeholder:text-muted-foreground"
-            value={form.name}
-            onChange={handleChange}
-          />
-          <label htmlFor="email" className="text-foreground font-medium">Email</label>
-          <input
-            id="email"
-            type="email"
-            name="email"
-            placeholder="Email"
-            required
-            className="border border-border rounded-lg px-4 py-2 bg-background text-foreground focus:outline-none focus:border-[#00BFFF] placeholder:text-muted-foreground"
-            value={form.email}
-            onChange={handleChange}
-          />
-          <label htmlFor="message" className="text-foreground font-medium">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            placeholder="Message"
-            required
-            rows={4}
-            className="border border-border rounded-lg px-4 py-2 bg-background text-foreground focus:outline-none focus:border-[#00BFFF] placeholder:text-muted-foreground"
-            value={form.message}
-            onChange={handleChange}
-          ></textarea>
-          <button
-            type="submit"
-            className="mt-2 bg-[#00BFFF] text-background px-4 py-2 rounded-lg font-semibold hover:bg-[#00BFFF]/90 transition flex items-center justify-center gap-2"
-            disabled={isSending}
+          {/* Contact Form */}
+          <form
+            className="flex-1 flex flex-col gap-3"
+            onSubmit={handleSubmit}
           >
-            {isSending && (
-              <svg className="animate-spin h-5 w-5 mr-1 text-background" viewBox="0 0 24 24">
-                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
-              </svg>
+            <label htmlFor="name" className="label-mono">Name</label>
+            <input
+              id="name"
+              type="text"
+              name="name"
+              placeholder="Name"
+              required
+              className="border border-border rounded-md px-4 py-2 bg-secondary text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-ring placeholder:text-muted-foreground"
+              value={form.name}
+              onChange={handleChange}
+            />
+            <label htmlFor="email" className="label-mono">Email</label>
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="Email"
+              required
+              className="border border-border rounded-md px-4 py-2 bg-secondary text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-ring placeholder:text-muted-foreground"
+              value={form.email}
+              onChange={handleChange}
+            />
+            <label htmlFor="message" className="label-mono">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Message"
+              required
+              rows={4}
+              className="border border-border rounded-md px-4 py-2 bg-secondary text-foreground focus:outline-none focus:border-primary focus:ring-1 focus:ring-ring placeholder:text-muted-foreground"
+              value={form.message}
+              onChange={handleChange}
+            ></textarea>
+            <button
+              type="submit"
+              className="mt-2 bg-primary text-primary-foreground px-4 py-2 rounded-md font-semibold hover:bg-primary/90 transition flex items-center justify-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              disabled={isSending}
+            >
+              {isSending && (
+                <svg className="animate-spin h-5 w-5 mr-1 text-primary-foreground" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                </svg>
+              )}
+              {isSending ? "Sending..." : "Send Message"}
+            </button>
+            {submitted && (
+              <span className="text-primary text-sm mt-2">Message sent!</span>
             )}
-            {isSending ? "Sending..." : "Send Message"}
-          </button>
-          {submitted && (
-            <span className="text-[#00BFFF] text-sm mt-2">Message sent!</span>
-          )}
-          {sendError && (
-            <span className="text-destructive text-sm mt-2">{sendError}</span>
-          )}
-        </form>
+            {sendError && (
+              <span className="text-destructive text-sm mt-2">{sendError}</span>
+            )}
+          </form>
+        </div>
       </div>
     </div>
   );
